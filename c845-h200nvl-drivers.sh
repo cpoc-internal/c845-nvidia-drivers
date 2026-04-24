@@ -38,6 +38,23 @@ export PATH=$CUDA_HOME/bin:$PATH
 export LD_LIBRARY_PATH=$CUDA_HOME/lib64:$LD_LIBRARY_PATH
 nvcc --version
 
+apt install docker.io -y
+sudo apt-get update
+sudo apt-get install -y nvidia-container-toolkit
+sudo nvidia-ctk runtime configure --runtime=docker
+sudo systemctl restart docker
+
+sudo apt-get install -y datacenter-gpu-manager
+sudo systemctl start nvidia-dcgm
+sudo systemctl status nvidia-dcgm
+
+docker run -d --gpus all \
+  --name dcgm-exporter \
+  --hostname ai-server- \
+  -e DCGM_EXPORTER_REMOTE_HOSTNAME=ai-server- \
+  -p 9400:9400 \
+  nvcr.io/nvidia/k8s/dcgm-exporter:latest
+
 sudo apt install lldpd -y
 sudo systemctl start lldpd
 sudo systemctl enable lldpd
