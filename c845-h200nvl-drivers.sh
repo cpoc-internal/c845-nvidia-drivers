@@ -25,6 +25,7 @@ sudo apt update
 sudo apt install nvidia-driver-580-server -y
 sudo apt-get update
 sudo apt-get install -y nvidia-fabricmanager-580=580.126.09-0ubuntu0.22.04.1
+sudo apt-get install -y nvidia-fabricmanager-580
 sudo systemctl enable nvidia-fabricmanager
 sudo systemctl start nvidia-fabricmanager
 sudo nvidia-smi -pm 1
