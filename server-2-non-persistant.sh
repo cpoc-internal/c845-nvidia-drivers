@@ -21,3 +21,5 @@ sudo ip link set dev enp41s0f0np0 mtu 9216
 sudo ip addr add 10.10.0.10/24 dev enp41s0f1np1
 sudo ip link set dev enp41s0f1np1 up
 sudo ip link set dev enp41s0f1np1 mtu 9216
+
+ip a
