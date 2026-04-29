@@ -35,10 +35,7 @@ sudo modprobe nvidia-modeset
 sudo apt-get install -y cuda-toolkit-13-0 -y
 sudo nvidia-smi
 sudo apt install nvidia-cuda-toolkit -y
-export CUDA_HOME=/usr/local/cuda-13.0
-export PATH=$CUDA_HOME/bin:$PATH
-export LD_LIBRARY_PATH=$CUDA_HOME/lib64:$LD_LIBRARY_PATH
-nvcc --version
+
 
 sudo apt install docker.io -y
 sudo apt-get update
@@ -60,7 +57,12 @@ docker run -d --gpus all \
 sudo apt install lldpd -y
 sudo systemctl start lldpd
 sudo systemctl enable lldpd
-sudo systemctl status lldpd
+#sudo systemctl status lldpd
+
+export CUDA_HOME=/usr/local/cuda-13.0
+export PATH=$CUDA_HOME/bin:$PATH
+export LD_LIBRARY_PATH=$CUDA_HOME/lib64:$LD_LIBRARY_PATH
+nvcc --version
 
 
 #sudo systemctl status nvidia-fabricmanager
