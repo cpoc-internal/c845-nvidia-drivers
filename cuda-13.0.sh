@@ -57,7 +57,7 @@ docker run -d --gpus all \
 sudo apt install lldpd -y
 sudo systemctl start lldpd
 sudo systemctl enable lldpd
-sudo systemctl status lldpd
+#sudo systemctl status lldpd
 
 export CUDA_HOME=/usr/local/cuda-13.0
 export PATH=$CUDA_HOME/bin:$PATH
