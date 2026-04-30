@@ -59,6 +59,9 @@ sudo systemctl start lldpd
 sudo systemctl enable lldpd
 #sudo systemctl status lldpd
 
+sudo apt install python3-pip -y
+sudo pip install nvidia-cudnn-frontend
+
 export CUDA_HOME=/usr/local/cuda-13.0
 export PATH=$CUDA_HOME/bin:$PATH
 export LD_LIBRARY_PATH=$CUDA_HOME/lib64:$LD_LIBRARY_PATH
